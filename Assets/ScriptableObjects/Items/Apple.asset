@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8de0820d5cc32a84ab0e0879533d5a40, type: 3}
-  m_Name: Silex
+  m_Name: Apple
   m_EditorClassIdentifier: 
-  itemType: 0
-  itemName: Silex
-  itemSprite: {fileID: 21300000, guid: d95ee12053bc972448380f2d97e4ef1f, type: 3}
+  itemType: 2
+  itemName: Apple
+  itemSprite: {fileID: 21300000, guid: ecc02f38a13262c46b35937b43ac79cf, type: 3}
   isStackable: 1
   _maxStack: 5
