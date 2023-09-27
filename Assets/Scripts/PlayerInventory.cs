@@ -13,6 +13,8 @@ public class PlayerInventory : MonoBehaviour
 
     [SerializeField] private StartingItem[] startingItemArray;
 
+    [SerializeField] private int MaxInventorySlots;
+
     [System.Serializable]
     private struct StartingItem
     {
@@ -23,7 +25,7 @@ public class PlayerInventory : MonoBehaviour
     private void Awake()
     {
         inventory = new Inventory();
-        inventory.maxSlots = 1;
+        inventory.maxSlots = MaxInventorySlots;
         LoadStartingInventory();
     }
 
@@ -46,8 +48,22 @@ public class PlayerInventory : MonoBehaviour
 
         if (itemWorld != null)
         {
-            inventory.AddItem(itemWorld.GetItem());
-            itemWorld.DestroySelf();
+            if (inventory.usedSlots < inventory.maxSlots)
+            {
+                //If inventory not full: add item to inventory and destroy ItemWorld
+                inventory.AddItem(itemWorld.GetItem());
+                itemWorld.DestroySelf();
+            }
+            else if (inventory.usedSlots == inventory.maxSlots && inventory.isAlreadyItemInInventory(itemWorld.GetItem()))
+            {
+                //If inventory full but has itemType: add item to inventory and destroy ItemWorld
+                inventory.AddItem(itemWorld.GetItem());
+                itemWorld.DestroySelf();
+            }
+            else
+            {
+                //Do nothing
+            }
         }
     }
 }

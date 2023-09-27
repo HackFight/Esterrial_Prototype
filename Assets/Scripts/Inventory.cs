@@ -9,6 +9,7 @@ public class Inventory
     public event EventHandler OnItemListChanged;
     private List<Item> itemList;
     public int maxSlots;
+    public int usedSlots;
 
     public Inventory()
     {
@@ -30,31 +31,46 @@ public class Inventory
                     itemAlreadyInInventory = true;
                 }
             }
-            if (!itemAlreadyInInventory) 
+            if (!itemAlreadyInInventory)
             {
                 itemList.Add(item);
             }
         }
         else
-        { 
+        {
             itemList.Add(item);
         }
 
-        if (itemList.Count > maxSlots) Debug.LogError("There is more slots used than the max slots count!");
+        usedSlots = itemList.Count;
+
+        if (usedSlots > maxSlots) Debug.LogError("There is more slots used than the max slots count!");
 
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public void PrintInventory()
     {
-        foreach (Item item in itemList) 
+        foreach (Item item in itemList)
         {
             Debug.Log(item.itemScriptableObject.itemName + ", " + item.amount);
         }
     }
 
-    public List<Item> GetItemList() 
+    public List<Item> GetItemList()
     {
         return itemList;
+    }
+
+    public bool isAlreadyItemInInventory(Item item)
+    {
+        bool foundIt = false;
+        foreach (Item inventoryItem in itemList)
+        {
+            if (inventoryItem.itemScriptableObject.itemType == item.itemScriptableObject.itemType)
+            {
+                foundIt = true;
+            }
+        }
+        return foundIt;
     }
 }

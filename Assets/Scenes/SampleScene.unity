@@ -333,6 +333,7 @@ MonoBehaviour:
   inventoryUI: {fileID: 1680249074}
   testItemScriptableObject: {fileID: 11400000, guid: d228c6b90167e714ea6270d126e26157, type: 2}
   startingItemArray: []
+  MaxInventorySlots: 1
 --- !u!1 &51896982
 GameObject:
   m_ObjectHideFlags: 0
