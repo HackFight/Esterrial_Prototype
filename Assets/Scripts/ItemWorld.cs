@@ -8,7 +8,7 @@ public class ItemWorld : MonoBehaviour
 {
     public static ItemWorld SpawnItemWorld(UnityEngine.Vector3 position, Item item)
     {
-        Transform transform = Instantiate(ItemAssets.Instance.itemWorldPrefab, position, UnityEngine.Quaternion.identity);
+        Transform transform = Instantiate(Assets.Instance.itemWorldPrefab, position, UnityEngine.Quaternion.identity);
 
         ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
         itemWorld.SetItem(item);
@@ -34,6 +34,11 @@ public class ItemWorld : MonoBehaviour
         this.item = item;
         spriteRenderer.sprite = item.itemScriptableObject.itemSprite;
 
+        if (item.amount < 1)
+        {
+            item.amount = 1;
+        }
+
         if (item.amount > 1)
         {
             textMeshPro.SetText(item.amount.ToString());
@@ -41,11 +46,6 @@ public class ItemWorld : MonoBehaviour
         else
         {
             textMeshPro.SetText("");
-        }
-
-        if (item.amount < 1)
-        {
-            item.amount = 1;
         }
     }
 

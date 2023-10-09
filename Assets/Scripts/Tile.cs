@@ -21,6 +21,13 @@ public class Tile
 
     public TileScriptableObject tileScriptableObject;
 
+    public int tileID;
+
+    public void InitTile()
+    {
+        tileID = tileScriptableObject.ID;
+    }
+
     public Sprite GetSprite()
     {
         return tileScriptableObject.tileSprite;

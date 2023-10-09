@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemAssets : MonoBehaviour
+public class Assets : MonoBehaviour
 {
-    public static ItemAssets Instance { get; private set; }
+    public static Assets Instance { get; private set; }
 
     private void Awake()
     {
@@ -12,4 +12,5 @@ public class ItemAssets : MonoBehaviour
     }
 
     public Transform itemWorldPrefab;
+    public Transform tileWorldPrefab;
 }

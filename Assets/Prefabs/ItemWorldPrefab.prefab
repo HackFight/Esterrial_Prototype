@@ -182,8 +182,8 @@ GameObject:
   - component: {fileID: 5227320989682374623}
   - component: {fileID: 5114005144591745811}
   - component: {fileID: 7464293812545963118}
-  - component: {fileID: -2560953508124675511}
   - component: {fileID: 1219201562597734629}
+  - component: {fileID: -2560953508124675511}
   m_Layer: 0
   m_Name: ItemWorldPrefab
   m_TagString: Untagged
@@ -279,18 +279,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-2560953508124675511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8868757667820124731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111e72001cb0de2449da4721af46be6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1219201562597734629
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -343,3 +331,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2560953508124675511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8868757667820124731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111e72001cb0de2449da4721af46be6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

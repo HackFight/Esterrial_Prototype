@@ -10,11 +10,4 @@ public class ItemScriptableObject : ScriptableObject
     public Sprite itemSprite;
 
     public bool isStackable;
-    /*public int maxStack
-    {
-        get { return _maxStack; }
-        set { if (_maxStack < 1) maxStack = 1; else maxStack = _maxStack; }
-    }
-
-    [SerializeField] private int _maxStack;*/
 }

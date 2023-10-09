@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int width = 5, height = 5;
+    public TileScriptableObject tileScriptableObject;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        TileGrid grid = new TileGrid(width, height, new Tile { tileScriptableObject = this.tileScriptableObject});
     }
 }
