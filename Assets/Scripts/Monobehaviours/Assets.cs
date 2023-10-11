@@ -13,4 +13,12 @@ public class Assets : MonoBehaviour
 
     public Transform itemWorldPrefab;
     public Transform tileWorldPrefab;
+
+    public TileScriptableObject groundScriptableObject;
+    public TileScriptableObject emptyTileScriptableObject;
+
+    public Tile GetTileFromTileScriptableObject(TileScriptableObject tileScriptableObject)
+    {
+        return new Tile { tileScriptableObject = tileScriptableObject };
+    }
 }

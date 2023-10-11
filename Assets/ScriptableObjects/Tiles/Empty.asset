@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c208b4f42f2de6418839b5f0510b38c, type: 3}
-  m_Name: Ground
+  m_Name: Empty
   m_EditorClassIdentifier: 
-  tileType: 1
-  tileName: Ground
-  tileSprite: {fileID: 21300000, guid: 809e455397f8169469cf2262f5b47fde, type: 3}
+  tileType: 0
+  tileName: Empty
+  tileSprite: {fileID: 0}
   layer: 0

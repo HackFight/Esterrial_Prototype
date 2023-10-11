@@ -1,12 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Tile
 {
 
+    public TileScriptableObject tileScriptableObject;
+
     public enum TileType
     {
+        None,
         Ground,
         Mud,
         Tree,
@@ -17,15 +22,6 @@ public class Tile
         Ground,
         Middle,
         Top,
-    }
-
-    public TileScriptableObject tileScriptableObject;
-
-    public int tileID;
-
-    public void InitTile()
-    {
-        tileID = tileScriptableObject.ID;
     }
 
     public Sprite GetSprite()

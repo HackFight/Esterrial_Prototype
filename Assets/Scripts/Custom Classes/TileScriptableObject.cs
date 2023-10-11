@@ -8,7 +8,6 @@ public class TileScriptableObject : ScriptableObject
     public Tile.TileType tileType;
     public string tileName;
     public Sprite tileSprite;
-    public int ID;
 
     public Tile.TileLayer layer;
 }
