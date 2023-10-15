@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 [Serializable]
@@ -24,8 +25,16 @@ public class Tile
         Top,
     }
 
-    public Sprite GetSprite()
+    public Material GetMaterial()
     {
-        return tileScriptableObject.tileSprite;
+        if (tileScriptableObject!= null)
+        {
+            return tileScriptableObject.tileMaterial;
+        }
+        else
+        {
+            Debug.LogError("Your tileScriptableObject is null!");
+            return null;
+        }
     }
 }

@@ -22,6 +22,18 @@ public class Tilemap
         }
     }
 
+    public void SetTilemapVisuals(TilemapVisuals tilemapVisuals)
+    {
+        if (tilemapVisuals != null)
+        {
+            tilemapVisuals.SetGrid(grid);
+        }
+        else
+        {
+            Debug.LogError("You tilemapVisuals are null!");
+        }
+    }
+
     public class TilemapObject
     {
         private Grid<TilemapObject> grid;
@@ -37,10 +49,27 @@ public class Tilemap
             this.tilemapTile = tilemapTile;
         }
 
-        public void SetTile(Tile tilemapTile) 
+        public void SetTile(Tile tilemapTile)
         {
-            this.tilemapTile = tilemapTile;
-            grid.TriggerGridObjectChanged(x, y);
+            if (tilemapTile != null)
+            {
+                this.tilemapTile = tilemapTile;
+                grid.TriggerGridObjectChanged(x, y);
+            }
+            else
+            {
+                Debug.LogError("Your Tile is null!");
+            }
+        }
+
+        public Tile GetTile()
+        {
+            return tilemapTile;
+        }
+
+        public Material GetMaterial()
+        {
+            return tilemapTile.GetMaterial();
         }
     }
 }

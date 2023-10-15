@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestGrid : MonoBehaviour
 {
-    private Transform player;
+    public Transform player;
     private Tilemap tilemap;
 
     [SerializeField] private Tile groudTile;
@@ -12,14 +12,13 @@ public class TestGrid : MonoBehaviour
     [SerializeField] private float cellSize;
     [SerializeField] private Vector2 originPosition;
 
-    private void Awake()
-    {
-        player = GameObject.FindWithTag("Player").transform;
-    }
+    [SerializeField] private TilemapVisuals tilemapVisuals;
 
     private void Start()
     {
         tilemap = new Tilemap(width, height, cellSize, new Vector3(originPosition.x, originPosition.y, 0));
+
+        tilemap.SetTilemapVisuals(tilemapVisuals);
     }
 
     private void Update()

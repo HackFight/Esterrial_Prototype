@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileType: 0
   tileName: Empty
-  tileSprite: {fileID: 0}
+  tileMaterial: {fileID: 2100000, guid: 855d92479c71a154baffec458e659266, type: 2}
   layer: 0

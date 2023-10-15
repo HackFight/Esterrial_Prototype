@@ -7,7 +7,7 @@ public class TileScriptableObject : ScriptableObject
 {
     public Tile.TileType tileType;
     public string tileName;
-    public Sprite tileSprite;
+    public Material tileMaterial;
 
     public Tile.TileLayer layer;
 }
